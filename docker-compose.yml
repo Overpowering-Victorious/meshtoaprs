@@ -1,0 +1,18 @@
+services:
+  meshtoaprs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tone/meshtoaprs
+    container_name: meshtoaprs
+    hostname: meshtoaprs
+    volumes:
+      - meshtoaprs:/config
+    logging:
+      driver: syslog
+      options:
+        tag: meshtoaprs
+    restart: unless-stopped
+
+volumes:
+  meshtoaprs:
