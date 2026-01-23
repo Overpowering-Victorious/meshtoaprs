@@ -33,7 +33,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     ActionBarDrawerToggle tg;
     NavigationView nv;
     Fragment fragment;
-    MaterialButton B3,B4,B5;
+    MaterialButton B3,B4;
     FloatingActionButton B6;
     FirebaseUser user;
 
@@ -70,7 +70,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         B3=findViewById(R.id.b3);
         B4=findViewById(R.id.b4);
-        B5=findViewById(R.id.b5);
+//        B5=findViewById(R.id.b5);
         B6=findViewById(R.id.new_add);
 
         B3.setOnClickListener(new View.OnClickListener() {
@@ -90,13 +90,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
-        B5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                favourites fv= new favourites();
-                replaceFragment(fv);
-            }
-        });
+//        B5.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                favourites fv= new favourites();
+//                replaceFragment(fv);
+//            }
+//        });
 
         B6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +116,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         id=item.getItemId();
         if(id==R.id.add_new) {
+            dl.closeDrawers();
             startActivity(new Intent(this, New_Article.class));
             overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
         }
@@ -125,6 +126,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             startActivity(new Intent(getApplicationContext(), Splash.class));
             overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
             finish();
+        }
+        else if(id==R.id.my_ar)
+        {
+            dl.closeDrawers();
+            my_articles my_article= new my_articles();
+            replaceFragment(my_article);
         }
         else
             Toast.makeText(this,"Hehe...",Toast.LENGTH_SHORT).show();

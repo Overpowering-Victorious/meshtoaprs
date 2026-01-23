@@ -55,16 +55,16 @@
             app:cornerRadius="0dp"
             android:text="Explore" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/b5"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:backgroundTint="@color/dtblue"
-            android:layout_margin="0.1dp"
-            app:cornerRadius="0dp"
-            android:text="Favourites"
-            />
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/b5"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            app:backgroundTint="@color/dtblue"-->
+<!--            android:layout_margin="0.1dp"-->
+<!--            app:cornerRadius="0dp"-->
+<!--            android:text="Favourites"-->
+<!--            />-->
 
     </LinearLayout>
 
